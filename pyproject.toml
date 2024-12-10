@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "ocr_project"
+version = "0.1.0"
+description = "A project with dependencies for image processing and text recognition."
+authors = ["JunYan Zhaop <junyanzhao1996@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pytesseract = "^0.3.10"
+pillow = "^10.0.1"
+numpy = "^1.26.0"
+opencv-python = "^4.8.0.76"
+pynput = "^1.7.6"
+pywin32 = "^308"
+mss = "^10.0.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

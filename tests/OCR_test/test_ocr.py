@@ -2,11 +2,11 @@ import unittest
 from PIL import Image
 import os
 import numpy as np
-from fuzzywuzzy import fuzz
+from rapidfuzz import fuzz
 
 from libs.OCR import OCR
 from .test_output import english_output,japanese_output
-os.chdir('./tests/test_files')
+os.chdir('./tests/OCR_test/test_files')
 
 def compare_strings(str1, str2):
     return fuzz.ratio(str1, str2)
