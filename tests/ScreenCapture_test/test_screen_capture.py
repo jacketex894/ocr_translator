@@ -1,8 +1,8 @@
 import unittest
+from unittest.mock import patch
+from libs.CaptureScreen import CaptureScreen
 from PIL import Image
-from unittest.mock import patch,MagicMock
-from libs.CaptureScreen import CaptureScreen,POINT
-from ctypes import windll, byref
+
 class TestScreenCapture(unittest.TestCase):
     def setUp(self):
         self.capture_screen_worker = CaptureScreen()
@@ -17,5 +17,7 @@ class TestScreenCapture(unittest.TestCase):
         start_position,end_position = self.capture_screen_worker.capture_screen_area()
         self.assertGreaterEqual(start_position, (0,0))
         self.assertGreaterEqual(end_position, (0,0))
+        screen_shot_image = self.capture_screen_worker.screen_shot(start_position,end_position)
+        self.assertIsInstance(screen_shot_image,Image.Image)
 if __name__ == '__main__':
      unittest.main()

@@ -14,7 +14,7 @@
 即可啟用本專案環境
 ## TODO
 - ✅ OCR
-- ⬜ ScreenCapture
+- ✅ ScreenCapture
 - ⬜ OCR with ScreenCapture
 - ⬜ Connect to LLM for translation.
 - ⬜ GUI

@@ -1,8 +1,8 @@
 [tool.poetry]
-name = "ocr_project"
+name = "ocr-project"
 version = "0.1.0"
 description = "A project with dependencies for image processing and text recognition."
-authors = ["JunYan Zhaop <junyanzhao1996@gmail.com>"]
+authors = ["JunYan Zhao <junyanzhao1996@gmail.com>"]
 license = "MIT"
 readme = "README.md"
 
