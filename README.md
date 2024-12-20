@@ -15,6 +15,6 @@
 ## TODO
 - ✅ OCR
 - ✅ ScreenCapture
-- ⬜ OCR with ScreenCapture
+- ✅ OCR with ScreenCapture
 - ⬜ Connect to LLM for translation.
-- ⬜ GUI
+- ✅ GUI

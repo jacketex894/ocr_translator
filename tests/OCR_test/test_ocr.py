@@ -53,5 +53,9 @@ class TestOCR(unittest.TestCase):
         img = OCR.load_image_as_gray_image("japanese_test.png")
         content = OCR.extract_japanese_from_image(img)
         self.assertGreater(compare_strings(content, japanese_output), 90)
+    def test_image_to_gray(self):
+        img = Image.open("japanese_test.png")
+        gray_img = OCR.image_to_gray(img)
+        self.assertEqual(gray_img.mode,'L')
 if __name__ == '__main__':
     unittest.main()

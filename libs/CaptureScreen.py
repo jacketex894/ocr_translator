@@ -4,17 +4,11 @@ import win32gui
 import win32con
 import win32print
 import time
-import mss
 from mss import models
-from PIL import Image
+from PIL import Image,ImageGrab
 
 UPDATE_TIME = 0.001
 
-class monitor(models.Monitor):
-    top:int
-    left:int
-    width:int
-    height:int
 
 class POINT(Structure):
     _fields_ = [("x", c_long), ("y", c_long)]
@@ -67,13 +61,11 @@ class CaptureScreen():
         win32gui.ReleaseDC(0, hdc)
         return start_position,end_position
     def screen_shot(self,start_position:tuple[int,int],end_position:tuple[int,int]) -> Image.Image:
-        screen_range:monitor = {
-            "top":int(min(start_position[1], end_position[1]) * self.scale),
-            "left": int(min(start_position[0], end_position[0]) * self.scale),
-            "width": int(abs(end_position[0] - start_position[0]) * self.scale),
-            "height": int(abs(end_position[1] - start_position[1]) * self.scale),
-        }
-        with mss.mss() as sct:
-            screenshot = sct.grab(screen_range)
-            img = Image.frombytes("RGB", screenshot.size, screenshot.rgb)
-            return img
+        screen_range= (
+            int(min(start_position[0], end_position[0]) * self.scale),
+            int(min(start_position[1], end_position[1]) * self.scale),
+            int(max(start_position[0], end_position[0]) * self.scale),
+            int(max(start_position[1], end_position[1]) * self.scale),
+        )
+        img = ImageGrab.grab(bbox=screen_range)
+        return img
