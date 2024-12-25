@@ -18,6 +18,8 @@
 
 ## Need
 本專案需要事先安裝 Tesseract。
+本專案需要事先安裝 cmake tool
+請參考:https://stackoverflow.com/questions/77267346/error-while-installing-python-package-llama-cpp-python
 
 ### windows 安裝方法
 請至 [Tesseract](https://github.com/tesseract-ocr/tesseract)下載安裝程式，本專案目前使用 5.5.0版本。
